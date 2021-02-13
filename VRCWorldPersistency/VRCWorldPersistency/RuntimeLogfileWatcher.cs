@@ -28,13 +28,13 @@ namespace VRCWorldPersistency
         static object logModifiedLock = new object();
         static Dictionary<string, LogFileState> logFileStates = new Dictionary<string, LogFileState>();
         static HashSet<string> modifiedLogPaths = new HashSet<string>();
-        
+
         [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
         private static bool InitializeScriptLookup()
         {
             if (logDirectoryWatcher == null)
             {
-                string VRCDataPath = $"C:\\Users\\{Environment.UserName}\\AppData\\LocalLow\\VRChat\\vrchat";
+                string VRCDataPath = $"C:\\Users\\{Environment.UserName}\\AppData\\LocalLow\\VRChat\\vrchat\\";
                 if (Directory.Exists(VRCDataPath))
                 {
                     logDirectoryWatcher = new FileSystemWatcher(VRCDataPath, "output_log_*.txt");
@@ -48,13 +48,18 @@ namespace VRCWorldPersistency
                 }
                 else
                 {
+                    Console.WriteLine("Could not locate VRChat data directory for watcher");
                     MessageBox.Show("Could not locate VRChat data directory for watcher");
+                    return false;
                 }
             }
-            return false;
+            else
+            {
+                return true;
+            }
         }
 
-        private static void CleanupLogWatcher()
+        internal static void CleanupLogWatcher()
         {
             if (logDirectoryWatcher != null)
             {
@@ -80,7 +85,10 @@ namespace VRCWorldPersistency
         internal static void Update()
         {
             if (!InitializeScriptLookup())
+            {
+                Console.WriteLine("Could not initialize log file watcher");
                 return;
+            }
 
             if (lineMatch == null)
                 lineMatch = new Regex(MATCH_STR, RegexOptions.Compiled);

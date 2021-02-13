@@ -47,6 +47,7 @@
             this.Name = "GUI";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GUI_FormClosing);
             this.ResumeLayout(false);
 
         }

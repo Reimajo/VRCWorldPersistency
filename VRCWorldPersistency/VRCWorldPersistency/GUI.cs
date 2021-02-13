@@ -22,5 +22,11 @@ namespace VRCWorldPersistency
         {
             RuntimeLogfileWatcher.Update();
         }
+
+        private void GUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Console.WriteLine("Form closing, end log watcher");
+            RuntimeLogfileWatcher.CleanupLogWatcher();
+        }
     }
 }
