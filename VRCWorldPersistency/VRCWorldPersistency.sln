@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRCWorldPersistency", "VRCWorldPersistency\VRCWorldPersistency.csproj", "{3099D675-B698-411A-8E65-E768A7CF6135}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3099D675-B698-411A-8E65-E768A7CF6135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3099D675-B698-411A-8E65-E768A7CF6135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3099D675-B698-411A-8E65-E768A7CF6135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3099D675-B698-411A-8E65-E768A7CF6135}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D38B8F4-29EF-4DF4-8173-37027F235842}
+	EndGlobalSection
+EndGlobal
